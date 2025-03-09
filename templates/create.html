@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Create</title>
+{% endblock %}
+
+{% block body %}
+    <div class="g-image">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/">Market</a>
+                    <a class="navbar-brand" href="/create">Create</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Переключатель навигации">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </nav>
+        </header>
+        <h3 style="position: absolute; top: 8%;  left: 2%">Information about products</h3>
+        <form method="post" style="position: absolute; top:11%; left: 2%"><br>
+            <input type="text" class="form-control" name="title" id="title" placeholder="Product name"><br>
+            <input type="number" class="form-control" name="price" id="price" placeholder="Price"><br>
+            <button class="btn btn-success" type="submit" style="background-color: #21381b">Add goods</button>
+        </form>
+    </div>
+{% endblock %}
+
+

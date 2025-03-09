@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Payment</title>
+{% endblock %}
+{% block body %}
+    <div class="g-image">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/">Market</a>
+                    <a class="navbar-brand" href="/create">Create</a>
+                </div>
+            </nav>
+        </header>
+    </div>
+
+    <div class="container py-3">
+        <header>
+            <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+                <h1 class="display-4 fw-normal text-body-emphasis">
+                    <ya-tr-span data-index="6-0" data-translated="true" data-source-lang="en" data-target-lang="ru"
+                                data-value="Pricing" data-translation="Цены" data-ch="1" data-type="trSpan"
+                                style="visibility: initial !important;">Promo
+                    </ya-tr-span>
+                </h1>
+                <p class="fs-5 text-body-secondary">
+                    Buy profitably with our unique promotional codes! Get a discount on any product or service in our outstanding app.
+                    Simply enter the promo code at checkout and enjoy exclusive offers and incredible discounts!
+                    We constantly update our promotional codes so that each of our customers can save and get more for less money.
+                    Don't miss the opportunity to make smart purchases with our promotional codes!
+                </p>
+                <div class="d-flex gap-3 justify-content-center lead fw-normal">
+                    <a class="icon-link" href="/learn_more" style="color: #21381b;"
+                    >
+                        Learn more >
+                    </a>
+                    <a class="icon-link" href="/about" style="color: #21381b">
+                        About us>
+                        <svg class="bi">
+                            <use href="#chevron-right"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+        </header>
+
+        <main>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                {% for el in data %}
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3"  style="background-color: #21381b; color: white">
+                            <h4 class="my-0 fw-normal">{{ el.title }}</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title">{{ el.price }}$
+                                <small class="text-body-secondary fw-light">/ month</small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>30 users included</li>
+                                 <li>15 GB memory</li>
+                                 <li>Support by phone and email</li>
+                                 <li>Access the Help Center</li>
+                            </ul>
+                            <a href="/buy/{{ el.id }}" type="button" class="w-100 btn btn-lg btn-primary" style="background-color: #21381b">Connect with us</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </main>
+    </div>
+{% endblock %}
+
+
